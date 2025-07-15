@@ -54,7 +54,6 @@ function GameControls() {
   const markStartAndTargets = (): CellType[][] => {
     const [rowStart, cellStart] = start.split(",").map(Number);
     const targetCoords = targets.split(";");
-    console.log(targetCoords);
     const boardWithMarkers = board.map((row, rowIndex) => {
       return row.map((cell, cellIndex) => {
         if (cellIndex === cellStart && rowIndex === rowStart) {
@@ -66,7 +65,6 @@ function GameControls() {
         }
       });
     });
-    console.log(boardWithMarkers);
     return boardWithMarkers;
   };
 

@@ -4,8 +4,6 @@ import React, { useContext } from "react";
 function Table() {
   const { path } = useContext(GameContext);
 
-  console.log(path);
-
   return (
     <>
       {path.length > 0 && (
