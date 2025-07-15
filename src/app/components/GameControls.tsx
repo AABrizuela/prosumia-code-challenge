@@ -4,7 +4,7 @@ import {
   CellType,
   Coord,
   findBestRoute,
-  isValidPoints,
+  isValidTargets,
   isValidStart,
 } from "../../utils";
 
@@ -72,11 +72,11 @@ function GameControls() {
 
   const drawBestPath = (inputBoard: CellType[][]): CellType[][] => {
     const startCoord: Coord = start.split(",").map(Number) as Coord;
-    const pointsCoords: Coord[] = targets
+    const targetsCoords: Coord[] = targets
       .split(";")
       .map((p) => p.trim().split(",").map(Number) as Coord);
 
-    const bestPath = findBestRoute(board, startCoord, pointsCoords);
+    const bestPath = findBestRoute(board, startCoord, targetsCoords);
     setPath(bestPath);
 
     const boardWithPath = inputBoard.map((row, rowIndex) =>
@@ -124,7 +124,7 @@ function GameControls() {
           id="targets"
           onChange={handleTargets}
           onBlur={(e) => {
-            if (!isValidPoints(e.target.value)) {
+            if (!isValidTargets(e.target.value)) {
               setTargetsError(true);
             } else {
               setTargetsError(false);

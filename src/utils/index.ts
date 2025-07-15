@@ -9,9 +9,9 @@ export function isValidStart(value: string): boolean {
   return x >= 0 && x < 5 && y >= 0 && y < 5;
 }
 
-export function isValidPoints(value: string): boolean {
-  const pointsRegex = /^(\d+,\d+\s*;?\s*)*$/;
-  if (!pointsRegex.test(value)) {
+export function isValidTargets(value: string): boolean {
+  const targetsRegex = /^(\d+,\d+\s*;?\s*)*$/;
+  if (!targetsRegex.test(value)) {
     return false;
   }
   if (!value.trim()) {
