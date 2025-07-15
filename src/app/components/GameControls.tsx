@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import {
   CellType,
